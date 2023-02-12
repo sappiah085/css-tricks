@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Design</title>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        STEP ONE
+        <div class="screen screen--one">
+          <span>Visit &nbsp; </span> https://google.com
+        </div>
+      </div>
+      <div class="card">
+        STEP TWO
+        <div class="screen screen--two">
+          <span>Visit &nbsp; </span> https://google.com
+        </div>
+      </div>
+      <div class="card">
+        STEP THREE
+        <div class="screen screen--three">
+          <span>Visit &nbsp; </span> https://google.com
+        </div>
+      </div>
+    </main>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>loader</title>
+  </head>
+  <body>
+    <!-- <main>
+      <div class="circle"></div>
+
+    </main> -->
+
+    <main>
+      <svg></svg>
+      <!-- <button class="button">Click me</button> -->
+    </main>
+
+    <script>
+      for (let i = 0; i < 900; i++) {
+        let rand = Math.random() * 6900;
+        let rand2 = Math.random() * 900;
+        let span = `<span class="element" style="position:absolute; left: ${rand}px; top: ${rand2}px "></span>`;
+        document.querySelector("main").insertAdjacentHTML("afterbegin", span);
+      }
+      const elements = document.querySelectorAll(".element");
+      const radius = 100;
+
+      const getCoordinates = (element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        };
+      };
+
+      const drawLine = (x1, y1, x2, y2) => {
+        const line = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line"
+        );
+        line.setAttribute("x1", x1);
+        line.setAttribute("y1", y1);
+        line.setAttribute("x2", x2);
+        line.setAttribute("y2", y2);
+        line.style.stroke = "black";
+        line.style.strokeWidth = 2;
+        document.querySelector("svg").appendChild(line);
+      };
+
+      document.addEventListener("mousemove", (event) => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        document.querySelector("svg").innerHTML = "";
+
+        for (let i = 0; i < elements.length; i++) {
+          const element = elements[i];
+          const { x, y } = getCoordinates(element);
+
+          const distance = Math.sqrt(
+            Math.pow(mouseX - x, 2) + Math.pow(mouseY - y, 2)
+          );
+          if (distance <= radius) {
+            drawLine(mouseX, mouseY, x, y);
+          }
+        }
+      });
+
+      /*document.querySelector("button").addEventListener("click", function (e) {
+              const { pageX, pageY, target } = e;
+              const span = document.createElement("span");
+              span.style.left = `${pageX - target.offsetLeft}px`;
+              span.style.top = `${pageY - target.offsetTop}px`;
+              let color = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+              span.style.border = `2px solid #${color}`;
+              this.append(span);
+              setTimeout(() => {
+                span.remove();
+              }, 2000);
+            }); */
+      /* setInterval(() => {
+              let color = Math.floor(Math.random() * 16777215).toString(16);
+              if (color.includes("#000")) color = "red";
+              document
+                .querySelector(".circle")
+                .style.setProperty("--color", `#${color}`);
+            }, 500);*/
+    </script>
+  </body>
+</html>

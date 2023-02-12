@@ -1,0 +1,178 @@
+/* *,
+*::after,
+*::before {
+  margin: 0%;
+  box-sizing: inherit;
+  padding: 0%;
+}
+body {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-weight: 400;
+  line-height: 1.6;
+}
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* 
+.circle {
+  --color: cyan;
+  animation: animate 2s linear infinite;
+  width: 300px;
+  border-radius: 50%;
+  height: 300px;
+  position: relative;
+  box-shadow: inset 2px 40px var(--color), inset 0px 8px 1px 1px var(--color),
+    1px 2px 40px 10px rgba(0, 0, 0, 0.393);
+}
+
+.circle::before {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background-color: var(--color);
+  content: "";
+  top: 20%;
+  left: 80%;
+  z-index: 3330;
+  border-radius: 50%;
+  box-shadow: 1px 2px 40px 10px rgba(0, 0, 0, 0.393),
+    010px 90px 5400px 310px var(--color), 0px 0px 3504px 200px var(--color),
+    00px 0px 600px 50px var(--color), 010px 90px 500px 50px var(--color), 0px 0px 54px 1px var(--color);
+}
+
+@keyframes animate {
+  100% {
+    transform: rotate(365deg);
+  }
+  0% {
+    transform: rotate(0deg);
+  }
+}  */
+/* 
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  flex-direction: column;
+  gap: 2rem;
+  perspective-origin: 0px 1300px;
+  transform-style: preserve-3d;
+}
+.card {
+  background-color: rgb(251, 169, 16);
+  padding: 0.6rem 3rem 0.6rem 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.592);
+}
+.card::after {
+  content: "";
+  left: 99%;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.592);
+  top: 0%;
+  position: absolute;
+  background-color: rgb(213, 158, 57);
+  height: 100%;
+  width: 0300px;
+  transform-origin: left;
+  transform: rotateY(-98deg);
+}
+.screen {
+  position: absolute;
+  background-color: rgb(251, 169, 16);
+  height: 119%;
+  color: rgb(0, 109, 217);
+  width: 0500px;
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0%, 89% 100%, 0% 100%);
+}
+.screen--one {
+  left: 150%;
+  top: -175%;
+}
+.screen--two {
+  left: 149%;
+  top: -148%;
+}
+.screen--three {
+  left: 144%;
+  top: -118%;
+}
+.screen span {
+  color: black;
+} */
+/* 
+button {
+  --x: 0;
+  --y: 0;
+  --play: running;
+  font-size: 1.2rem;
+  border: 1px solid #f7f7f7;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  padding: 0.5em 1.5em;
+  border-radius: 52px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+span {
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  position: absolute;
+  transform-origin: center;
+  display: inline-block;
+  border-radius: 50%;
+  height: 0%;
+  filter: brightness(2);
+  width: 0;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  to {
+    height: 10rem;
+    width: 10rem;
+  }
+} */
+.element{
+  border: 2px solid black;
+}
+svg{
+  width: 100%;
+  height: 100vh;
+}
+.globe {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at center, #008080 0%, #ffffff 70%);
+  box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.19), inset 0px 0px 20px rgba(255, 255, 255, 0.23);
+  position: relative;
+}
+
+.globe-inner {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: #008080;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
